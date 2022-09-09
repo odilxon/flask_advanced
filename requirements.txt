@@ -1,0 +1,5 @@
+flask-admin
+flask-login
+flask-sqlalchemy
+pip-chill
+psycopg2-binary
