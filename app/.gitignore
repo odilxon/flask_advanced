@@ -29,3 +29,5 @@ app.py
 config.py
 static/*
 flask_oneid/views.py
+
+database.db

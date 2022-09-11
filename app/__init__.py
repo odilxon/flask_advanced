@@ -15,9 +15,11 @@ def create_app():
     app.config.from_pyfile('configs/main.py')
 
     from app.api.routes import api_blueprint
+    from app.api2.routes import api2
     from app.pages.routes import pages_blueprint
     app.register_blueprint(api_blueprint)
     app.register_blueprint(pages_blueprint)
+    app.register_blueprint(api2)
     db.init_app(app)
     admin.init_app(app)
     login_manager.init_app(app)
@@ -35,6 +37,7 @@ def create_app():
         return User.query.get(user_id)
 
     # with app.app_context():
+    #     db.drop_all()
     #     db.create_all()
     @app.errorhandler(404)
     def page_not_found(e):
